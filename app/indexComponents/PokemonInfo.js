@@ -1,4 +1,4 @@
-import { getPokemonData } from "./FetchData";
+import { getPokemonData } from "../api/FetchData";
 import { useQuery } from "react-query";
 
 const PokemonInfo = ({name, url}) => {
