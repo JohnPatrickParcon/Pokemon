@@ -1,10 +1,9 @@
 import PokemonInfo from "./PokemonInfo";
-import styles from "../page.module.css";
-import { useQuery } from "react-query";
+
 const PokemonList = ({results}) => {
   return (
     <>
-    <div className={styles.pokemonGrid}>
+    <div className="grid grid-cols-4 place-items-center bg-amber-200">
       {results.map(({name, url}) => 
         <PokemonInfo 
             key={name} 

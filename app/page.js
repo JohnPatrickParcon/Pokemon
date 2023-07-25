@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { useQuery } from "react-query"
+import { useQuery } from "@tanstack/react-query"
 import { getPokemonData, ListURL } from "./api/FetchData";
 import PokemonList from './indexComponents/PokemonList';
 import Pagination from "./indexComponents/Pagination";
@@ -15,7 +15,6 @@ const page = () => {
 
   return (
     <>
-    <h2>Pokemon List</h2>
     <main>
       <Pagination next={next} previous={previous} setUrl={setUrl}/>
       <PokemonList results={results} next={next} previous={previous}/>

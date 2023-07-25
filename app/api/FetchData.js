@@ -14,3 +14,8 @@ export async function getSearchedPokemon(searchedPokemon) {
     }
     return null
 }
+
+export async function getPokemonDataByName(name){
+        const response =  await axios.get(ListURL + `${name}`)
+        return response.data;
+}
