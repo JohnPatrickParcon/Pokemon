@@ -3,6 +3,7 @@ import { useState } from "react"
 import useDebounce from "./useDebounce";
 import { useQuery } from "@tanstack/react-query";
 import { getSearchedPokemon } from "../api/FetchData";
+import Image from "next/image";
 
 const Nav = () => {
   const [search, setSearch] = useState('');
@@ -30,7 +31,7 @@ const Nav = () => {
                 <div
                   className="absolute right-6 w-64 p-3 rounded-lg bg-slate-600 text-slate-100">
                   <Link href={`/pokemon/${data.name}`} onClick={() => {setShowResult(false)}}>
-                    <img className="mx-16" src={data.sprites.front_default}></img>
+                    <Image className="mx-16" src={data.sprites.front_default} alt={`image of ${data.name}`}/>
                     <h2 className="text-center">{data.name}</h2>
                   </Link>
                 </div>

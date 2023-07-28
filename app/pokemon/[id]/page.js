@@ -1,8 +1,9 @@
 "use client"
 import { useQuery } from "@tanstack/react-query";
 import { getPokemonDataByName } from "@/app/api/FetchData";
+import Image from "next/image";
 
-const page = ({params}) => {
+const Page = ({params}) => {
   const {data, isLoading, error} = useQuery(["pokemonDataByName", params.id],
     () => getPokemonDataByName(params.id), {refetchOnWindowFocus: false});
   
@@ -35,7 +36,7 @@ const page = ({params}) => {
   return (
     <>
     <div className="grid place-items-center p-12 pt-4">
-      <img className="bg-amber-100 rounded-full" src={pokemon.sprite}></img>
+      <Image className="bg-amber-100 rounded-full" src={pokemon.sprite} alt={`image of ${params.id}`}/>
       <h1 className="text-2xl p-1">{params.id}</h1>
       <ul className="grid grid-flow-col border-b-4 border-gray-300 gap-2 p-1">
         <p className="border-r-2 border-gray-600 p-2">Abilities</p>
@@ -67,4 +68,4 @@ const page = ({params}) => {
   )
 }
 
-export default page
+export default Page

@@ -5,7 +5,7 @@ import { getPokemonData, ListURL } from "./api/FetchData";
 import PokemonList from './indexComponents/PokemonList';
 import Pagination from "./indexComponents/Pagination";
 
-const page = () => {
+const Page = () => {
   const [url, setUrl] = useState(ListURL)
   const {data, error, isLoading} = useQuery(["pokemonData", url], () => getPokemonData(url), {keepPreviousData: true});
   const { next, previous, results } = data || {};
@@ -22,4 +22,4 @@ const page = () => {
     </>
   )
 }
-export default page
+export default Page
