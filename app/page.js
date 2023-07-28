@@ -17,7 +17,7 @@ const page = () => {
     <>
     <main>
       <Pagination next={next} previous={previous} setUrl={setUrl}/>
-      <PokemonList results={results} next={next} previous={previous}/>
+      <PokemonList results={results}/>
     </main>
     </>
   )

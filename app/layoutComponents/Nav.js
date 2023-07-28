@@ -11,7 +11,7 @@ const Nav = () => {
   const {data, error, isloading} = useQuery(['searchPokemon', debouncedSearch], () => getSearchedPokemon(debouncedSearch), {refetchOnWindowFocus: false});
   const searchHandler = (e) => {setSearch(e.target.value)};
   return (
-      <nav className="grid grid-cols-2 bg-inherit">
+      <nav className="grid grid-cols-2 bg-red-700">
           <Link 
             href={'./'}
             onClick={() => {setShowResult(false)}}>
@@ -19,7 +19,7 @@ const Nav = () => {
           </Link>
           <div className="relative p-3 text-end">
             <input 
-              className="p-1 mr-2.5 rounded-lg text-lg bg-black text-slate-500"
+              className="sm:w-1/4 md:w-2/4 lg:w-3/4 p-1 mr-2.5 rounded-lg text-lg bg-black text-slate-500"
               type="search" 
               placeholder="Pokemon name"
               value={search}

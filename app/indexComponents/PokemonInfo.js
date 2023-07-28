@@ -10,12 +10,12 @@ const PokemonInfo = ({name, url}) => {
 
   return (
     <>
-    <div className="text-center">
-      <Link href={`/pokemon/${name}`}>
+    <Link href={`/pokemon/${name}`}>
+      <div className="border-2 border-black rounded-lg p-2.5 px-10 text-center transition-colors ease-in-out hover:bg-slate-500">
         <img src={front_default}></img>
         <p>{name}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
     </>
   )
 }

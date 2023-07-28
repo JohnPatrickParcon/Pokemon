@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">  
       <body className={inter.className}>
         <QueryClientProvider client={queryClient}>
-          <div className="bg-red-700">
+          <div className="bg-amber-200">
             <Nav/>
             {children}
           </div>
