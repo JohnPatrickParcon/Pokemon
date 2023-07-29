@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getPokemonData } from "../api/FetchData";
 import { useQuery } from "@tanstack/react-query";
-import Image from "next/image";
 
 const PokemonInfo = ({name, url}) => {
     const {data, error} = useQuery(["pokemonData", url], () => getPokemonData(url), {refetchOnWindowFocus: false});
@@ -13,7 +12,7 @@ const PokemonInfo = ({name, url}) => {
     <>
     <Link href={`/pokemon/${name}`}>
       <div className="border-2 border-black rounded-lg p-2.5 px-10 text-center transition-colors ease-in-out hover:bg-slate-500">
-        <Image src={front_default} alt={`image of ${name}`}/>
+        <img src={front_default} alt={`image of ${name}`}></img>
         <p>{name}</p>
       </div>
     </Link>
